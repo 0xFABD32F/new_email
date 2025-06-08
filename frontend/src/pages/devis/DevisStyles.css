@@ -1,0 +1,1282 @@
+/* Variables CSS optimisées */
+:root {
+  --primary: #4285f4;
+  --primary-hover: #3367d6;
+  --secondary: #64748b;
+  --success: #10b981;
+  --danger: #ef4444;
+  --warning: #f59e0b;
+  --info: #3498db;
+  --light: #f8f9fa;
+  --dark: #343a40;
+  --border: #e2e8f0;
+  --text: #1e293b;
+  --text-muted: #64748b;
+  --bg: #f8f9fa;
+  --card-bg: #ffffff;
+  --shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  --shadow-hover: 0 4px 12px rgba(0, 0, 0, 0.15);
+  --radius: 8px;
+  --radius-sm: 4px;
+  --transition: all 0.2s ease;
+}
+
+/* Reset et optimisations de base */
+* {
+  box-sizing: border-box;
+}
+
+/* ===== CONTENEUR PRINCIPAL ===== */
+.devis-container {
+  padding: 1.5rem;
+  max-width: 100%;
+  margin: 0 auto;
+  background-color: var(--bg);
+  min-height: 100vh;
+  will-change: transform;
+}
+
+/* ===== HEADER COMMUN ===== */
+.devis-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+  background: white;
+  padding: 1.5rem;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.devis-header h1 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin: 0;
+  color: var(--text);
+  display: flex;
+  align-items: center;
+}
+
+.devis-header h1 i {
+  margin-right: 0.75rem;
+  color: var(--primary);
+}
+
+.devis-header p {
+  color: var(--text-muted);
+  margin: 0.5rem 0 0 0;
+  font-size: 0.95rem;
+}
+
+.devis-header-actions {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+/* ===== BOUTONS OPTIMISÉS ===== */
+.devis-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius);
+  padding: 0.75rem 1.25rem;
+  font-weight: 500;
+  font-size: 0.875rem;
+  transition: var(--transition);
+  cursor: pointer;
+  border: none;
+  text-decoration: none;
+  white-space: nowrap;
+  position: relative;
+  overflow: hidden;
+}
+
+.devis-btn-primary {
+  background-color: var(--primary);
+  color: white;
+  box-shadow: 0 2px 4px rgba(66, 133, 244, 0.3);
+}
+
+.devis-btn-primary:hover:not(:disabled) {
+  background-color: var(--primary-hover);
+  color: white;
+  text-decoration: none;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(66, 133, 244, 0.4);
+}
+
+.devis-btn-secondary {
+  background-color: var(--secondary);
+  color: white;
+  box-shadow: 0 2px 4px rgba(100, 116, 139, 0.3);
+}
+
+.devis-btn-secondary:hover:not(:disabled) {
+  background-color: #475569;
+  color: white;
+  text-decoration: none;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(100, 116, 139, 0.4);
+}
+
+.devis-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.devis-btn i {
+  margin-right: 0.5rem;
+  font-size: 0.875rem;
+}
+
+/* Bouton icône pour refresh */
+.devis-btn-icon {
+  height: 2.5rem;
+  width: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.devis-btn-icon:hover {
+  background-color: var(--light);
+  color: var(--primary);
+  border-color: var(--primary);
+  transform: translateY(-1px);
+}
+
+/* ===== CARDS OPTIMISÉES ===== */
+.devis-card {
+  background-color: var(--card-bg);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  margin-bottom: 1.5rem;
+  border: 1px solid var(--border);
+}
+
+/* ===== FILTRES POUR DEVIS LIST ===== */
+.devis-filters {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+  align-items: center;
+  background: white;
+  padding: 1.5rem;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.devis-search {
+  position: relative;
+  flex: 1;
+  min-width: 250px;
+}
+
+.devis-search i {
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-muted);
+  z-index: 2;
+}
+
+.devis-search input {
+  width: 100%;
+  height: 2.5rem;
+  padding: 0.5rem 2.5rem 0.5rem 2.5rem;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  background-color: white;
+  transition: var(--transition);
+  font-size: 0.875rem;
+}
+
+.devis-search input:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(66, 133, 244, 0.15);
+}
+
+.devis-search button {
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  cursor: pointer;
+  padding: 0;
+  z-index: 2;
+}
+
+.devis-select {
+  height: 2.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  background-color: white;
+  min-width: 180px;
+  font-size: 0.875rem;
+  transition: var(--transition);
+}
+
+.devis-select:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(66, 133, 244, 0.15);
+}
+
+/* ===== TABLEAUX OPTIMISÉS ===== */
+.devis-table-container {
+  width: 100%;
+  overflow-x: auto;
+  border-radius: var(--radius);
+}
+
+.devis-table-container table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.875rem;
+  background: white;
+}
+
+.devis-table-container th {
+  background-color: var(--light);
+  color: var(--text);
+  font-weight: 600;
+  text-align: left;
+  padding: 1rem;
+  border-bottom: 2px solid var(--border);
+  white-space: nowrap;
+  font-size: 0.875rem;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.devis-table-container td {
+  padding: 1rem;
+  border-bottom: 1px solid var(--border);
+  vertical-align: middle;
+}
+
+.devis-table-container tr:hover {
+  background-color: rgba(66, 133, 244, 0.05);
+}
+
+.devis-bold {
+  font-weight: 600;
+  color: var(--text);
+}
+
+.devis-small {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-top: 0.25rem;
+}
+
+.devis-description {
+  max-width: 300px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* ===== BADGES POUR STATUTS ===== */
+.devis-badge {
+  display: inline-block;
+  padding: 0.35em 0.65em;
+  font-size: 0.75em;
+  font-weight: 600;
+  line-height: 1;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+  border-radius: var(--radius-sm);
+}
+
+.badge-info {
+  background-color: rgba(52, 152, 219, 0.15);
+  color: #3498db;
+  border: 1px solid rgba(52, 152, 219, 0.3);
+}
+
+.badge-primary {
+  background-color: rgba(66, 133, 244, 0.15);
+  color: var(--primary);
+  border: 1px solid rgba(66, 133, 244, 0.3);
+}
+
+.badge-success {
+  background-color: rgba(16, 185, 129, 0.15);
+  color: #10b981;
+  border: 1px solid rgba(16, 185, 129, 0.3);
+}
+
+.badge-warning {
+  background-color: rgba(245, 158, 11, 0.15);
+  color: #f59e0b;
+  border: 1px solid rgba(245, 158, 11, 0.3);
+}
+
+.badge-danger {
+  background-color: rgba(239, 68, 68, 0.15);
+  color: #ef4444;
+  border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+.badge-secondary {
+  background-color: rgba(100, 116, 139, 0.15);
+  color: #64748b;
+  border: 1px solid rgba(100, 116, 139, 0.3);
+}
+
+/* ===== ACTIONS DANS LES TABLEAUX ===== */
+.devis-actions {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+}
+
+.devis-btn-action {
+  height: 2rem;
+  width: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-sm);
+  border: none;
+  cursor: pointer;
+  transition: var(--transition);
+  color: white;
+  font-size: 0.75rem;
+}
+
+.devis-edit {
+  background-color: var(--primary);
+}
+
+.devis-edit:hover {
+  background-color: var(--primary-hover);
+  transform: scale(1.1);
+}
+
+.devis-delete {
+  background-color: var(--danger);
+}
+
+.devis-delete:hover {
+  background-color: #dc2626;
+  transform: scale(1.1);
+}
+
+.devis-excel {
+  background-color: var(--success);
+}
+
+.devis-excel:hover {
+  background-color: #0d9488;
+  transform: scale(1.1);
+}
+
+/* ===== ÉTATS VIDES ===== */
+.devis-empty {
+  padding: 3rem !important;
+  text-align: center;
+}
+
+.devis-empty div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.devis-empty i {
+  font-size: 3rem;
+  color: var(--text-muted);
+  margin-bottom: 1rem;
+}
+
+.devis-empty h3 {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+  color: var(--text);
+}
+
+.devis-empty p {
+  color: var(--text-muted);
+  margin-bottom: 1.5rem;
+}
+
+/* ===== FOOTER POUR STATS ===== */
+.devis-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.5rem;
+  background: white;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  margin-top: 1rem;
+}
+
+.devis-stats {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.devis-stats span {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+}
+
+.devis-stats strong {
+  color: var(--text);
+  font-weight: 600;
+}
+
+/* ===== FORMULAIRES ===== */
+.devis-form {
+  padding: 1.5rem;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+@media (min-width: 992px) {
+  .form-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.form-column {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.form-section {
+  background: white;
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border);
+}
+
+.form-section h3 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  color: var(--text);
+  display: flex;
+  align-items: center;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.form-section h3 i {
+  margin-right: 0.5rem;
+  color: var(--primary);
+}
+
+.form-group {
+  margin-bottom: 1.25rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: var(--text);
+  font-size: 0.875rem;
+}
+
+/* ===== INPUTS OPTIMISÉS ===== */
+.input-wrapper {
+  position: relative;
+}
+
+.input-wrapper i {
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-muted);
+  z-index: 1;
+  font-size: 0.875rem;
+}
+
+.input-wrapper input,
+.input-wrapper select,
+.input-wrapper textarea {
+  width: 100%;
+  padding: 0.75rem 1rem 0.75rem 2.5rem;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  background-color: white;
+  transition: var(--transition);
+  font-size: 0.875rem;
+}
+
+.input-wrapper textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.input-wrapper input:focus,
+.input-wrapper select:focus,
+.input-wrapper textarea:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(66, 133, 244, 0.15);
+}
+
+/* ===== TABLEAU DES ITEMS DANS LE FORMULAIRE ===== */
+.devis-items-table {
+  margin-top: 1rem;
+  overflow-x: auto;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  background: white;
+}
+
+.devis-items-table table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0;
+}
+
+.devis-items-table th,
+.devis-items-table td {
+  padding: 0.75rem 0.5rem;
+  border-bottom: 1px solid var(--border);
+  text-align: left;
+  vertical-align: middle;
+}
+
+.devis-items-table th {
+  background-color: var(--light);
+  font-weight: 600;
+  color: var(--text);
+  font-size: 0.75rem;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.devis-items-table th:first-child {
+  width: 80px;
+  text-align: center;
+}
+
+.devis-items-table th:nth-child(2) {
+  width: 150px;
+}
+
+.devis-items-table th:nth-child(3) {
+  width: 200px;
+}
+
+.devis-items-table th:nth-child(4),
+.devis-items-table th:nth-child(5) {
+  width: 80px;
+  text-align: center;
+}
+
+.devis-items-table th:nth-child(6),
+.devis-items-table th:nth-child(7) {
+  width: 100px;
+  text-align: right;
+}
+
+.devis-items-table th:last-child {
+  width: 60px;
+  text-align: center;
+}
+
+/* Inputs dans le tableau optimisés */
+.devis-items-table input,
+.devis-items-table select {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  font-size: 0.75rem;
+  transition: var(--transition);
+}
+
+.devis-items-table input:focus,
+.devis-items-table select:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 2px rgba(66, 133, 244, 0.15);
+}
+
+.devis-items-table .qty-input,
+.devis-items-table .unit-input {
+  text-align: center;
+}
+
+.devis-items-table .price-input {
+  text-align: right;
+}
+
+/* Items importés */
+.imported-item {
+  display: block;
+  padding: 0.5rem;
+  background-color: #e3f2fd;
+  border: 1px solid #bbdefb;
+  border-radius: var(--radius-sm);
+  color: #1565c0;
+  font-weight: 500;
+  font-size: 0.75rem;
+}
+
+/* Actions dans le tableau des items */
+.devis-items-table .devis-btn-action {
+  padding: 0.5rem;
+  border: none;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  font-size: 0.75rem;
+  transition: var(--transition);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+}
+
+.devis-items-table .devis-btn-action.devis-delete {
+  background-color: var(--danger);
+  color: white;
+}
+
+.devis-items-table .devis-btn-action.devis-delete:hover:not(:disabled) {
+  background-color: #dc2626;
+  transform: scale(1.05);
+}
+
+.devis-items-table .devis-btn-action:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* ===== INFORMATIONS CLIENT ===== */
+.client-info {
+  background-color: var(--light);
+  border-radius: var(--radius);
+  padding: 1rem;
+  border: 1px solid var(--border);
+}
+
+.client-info p {
+  margin: 0.5rem 0;
+  font-size: 0.875rem;
+}
+
+.client-info strong {
+  color: var(--text);
+}
+
+/* ===== SHIPPING ===== */
+.shipping-toggle {
+  margin-bottom: 1rem;
+}
+
+.shipping-checkbox-label {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  font-weight: 500;
+  color: var(--text);
+  padding: 1rem;
+  background: var(--light);
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  transition: var(--transition);
+}
+
+.shipping-checkbox-label:hover {
+  background: white;
+  border-color: var(--primary);
+}
+
+.shipping-checkbox-label input[type="checkbox"] {
+  margin-right: 0.75rem;
+  transform: scale(1.2);
+  accent-color: var(--primary);
+}
+
+.shipping-form-section {
+  background: var(--light);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  margin-top: 1rem;
+}
+
+.shipping-actions {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border);
+}
+
+/* ===== RÉCAPITULATIF ===== */
+.devis-summary {
+  background-color: var(--light);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  margin-top: 1rem;
+  border: 1px solid var(--border);
+}
+
+.devis-summary-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.devis-summary-row:last-child {
+  border-bottom: none;
+  font-weight: 700;
+  font-size: 1.1rem;
+  padding-top: 1rem;
+  color: var(--primary);
+  background: white;
+  margin: 1rem -1.5rem -1.5rem;
+  padding: 1rem 1.5rem;
+  border-radius: 0 0 var(--radius) var(--radius);
+}
+
+/* ===== ACTIONS DU FORMULAIRE ===== */
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border);
+}
+
+/* ===== LOADING ET ERREURS ===== */
+.devis-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem;
+  text-align: center;
+  background: white;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.devis-spinner {
+  width: 3rem;
+  height: 3rem;
+  border: 0.25rem solid rgba(66, 133, 244, 0.3);
+  border-radius: 50%;
+  border-top-color: var(--primary);
+  animation: spin 1s linear infinite;
+  margin-bottom: 1rem;
+}
+
+.devis-spinner-sm {
+  width: 1.25rem;
+  height: 1.25rem;
+  border: 0.2rem solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top-color: white;
+  animation: spin 1s linear infinite;
+  margin-right: 0.5rem;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.devis-error {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem;
+  text-align: center;
+  background-color: var(--card-bg);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.devis-error i {
+  font-size: 3rem;
+  color: var(--danger);
+  margin-bottom: 1rem;
+}
+
+.devis-error h3 {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+  color: var(--text);
+}
+
+.devis-error p {
+  color: var(--text-muted);
+  margin-bottom: 1.5rem;
+}
+
+.devis-error-message {
+  background-color: rgba(239, 68, 68, 0.1);
+  color: var(--danger);
+  padding: 1rem;
+  border-radius: var(--radius);
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+/* ===== UTILITAIRES ===== */
+.mt-3 {
+  margin-top: 1rem;
+}
+
+.mt-4 {
+  margin-top: 1.5rem;
+}
+
+.me-2 {
+  margin-right: 0.5rem;
+}
+
+.me-3 {
+  margin-right: 0.75rem;
+}
+
+/* ===== OPTGROUPS ===== */
+optgroup {
+  font-weight: bold;
+  color: var(--text);
+}
+
+optgroup option {
+  font-weight: normal;
+  color: var(--text);
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+@media (max-width: 768px) {
+  .devis-container {
+    padding: 1rem;
+  }
+
+  .devis-header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem;
+  }
+
+  .devis-header-actions {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .devis-filters {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 1rem;
+  }
+
+  .devis-search {
+    min-width: auto;
+  }
+
+  .form-actions {
+    flex-direction: column;
+  }
+
+  .form-actions button {
+    width: 100%;
+  }
+
+  .devis-items-table {
+    font-size: 0.75rem;
+  }
+
+  .devis-items-table table {
+    min-width: 700px;
+  }
+
+  .devis-footer {
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+  }
+
+  .devis-stats {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .devis-header h1 {
+    font-size: 1.5rem;
+  }
+
+  .devis-btn {
+    padding: 0.5rem 1rem;
+    font-size: 0.75rem;
+  }
+
+  .form-section {
+    padding: 1rem;
+  }
+
+  .devis-summary-row:last-child {
+    margin: 0.5rem -1rem -1rem;
+    padding: 1rem;
+  }
+}
+
+/* ===== OPTIMISATIONS POUR LES PERFORMANCES ===== */
+.devis-items-table tbody tr,
+.devis-table-container tbody tr {
+  will-change: transform;
+}
+
+.devis-items-table tbody tr:hover,
+.devis-table-container tbody tr:hover {
+  background-color: rgba(66, 133, 244, 0.05);
+}
+
+/* Amélioration de la lisibilité */
+.devis-items-table td,
+.devis-table-container td {
+  font-size: 0.875rem;
+}
+
+.devis-items-table strong,
+.devis-table-container strong {
+  font-weight: 600;
+}
+
+/* ===== STYLES SPÉCIFIQUES POUR LES IMPORTS ===== */
+.info-card {
+  background: var(--light);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1rem;
+  margin-top: 1rem;
+}
+
+.info-card h4 {
+  margin: 0 0 0.75rem 0;
+  color: var(--text);
+  font-size: 0.875rem;
+  display: flex;
+  align-items: center;
+}
+
+.info-card h4 i {
+  margin-right: 0.5rem;
+  color: var(--primary);
+}
+
+.info-card p {
+  margin: 0 0 0.5rem 0;
+  color: var(--text-muted);
+  font-size: 0.75rem;
+  line-height: 1.4;
+}
+
+.info-card p:last-child {
+  margin-bottom: 0;
+}
+
+/* ===== ANIMATIONS SUBTILES ===== */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.devis-card,
+.form-section {
+  animation: fadeIn 0.3s ease-out;
+}
+
+/* ===== FOCUS VISIBLE POUR L'ACCESSIBILITÉ ===== */
+.devis-btn:focus-visible,
+.devis-btn-action:focus-visible,
+.devis-btn-icon:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
+/* ===== STYLES POUR LE SHIPPING AVANCÉ ===== */
+
+/* Multi-leg section */
+.multi-leg-section {
+  margin-top: 1.5rem;
+  padding: 1rem;
+  background: white;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+}
+
+.multi-leg-section h4 {
+  margin: 0 0 1rem 0;
+  color: var(--text);
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+}
+
+.multi-leg-section h4 i {
+  color: var(--primary);
+}
+
+.leg-item {
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  background: var(--light);
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+}
+
+.leg-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.leg-header h5 {
+  margin: 0;
+  color: var(--text);
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+/* Shipping info card améliorée */
+.shipping-info-card {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.shipping-summary {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.shipping-summary-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.shipping-summary-item span:first-child {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-weight: 500;
+}
+
+.shipping-summary-item strong {
+  font-size: 1rem;
+  color: var(--text);
+  font-weight: 600;
+}
+
+/* Résultat du calcul shipping */
+.shipping-result {
+  background: linear-gradient(135deg, #d4edda 0%, #c3e6cb 100%);
+  border: 1px solid #c3e6cb;
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.shipping-result h4 {
+  margin: 0 0 1rem 0;
+  color: #155724;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+}
+
+.shipping-result h4 i {
+  color: #28a745;
+}
+
+.shipping-result-details {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 0.75rem;
+}
+
+.shipping-result-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid rgba(21, 87, 36, 0.2);
+}
+
+.shipping-result-item:last-child {
+  border-bottom: none;
+}
+
+.shipping-result-item.total {
+  border-top: 2px solid #28a745;
+  margin-top: 0.5rem;
+  padding-top: 0.75rem;
+  font-weight: 600;
+  font-size: 1.05rem;
+}
+
+.shipping-result-item span {
+  color: #155724;
+  font-size: 0.875rem;
+}
+
+.shipping-result-item strong {
+  color: #155724;
+  font-weight: 600;
+}
+
+/* Styles pour les champs requis */
+.required {
+  color: var(--danger);
+  font-weight: bold;
+}
+
+/* Small text pour les instructions */
+small {
+  display: block;
+  margin-top: 0.25rem;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+/* Responsive pour le shipping avancé */
+@media (max-width: 768px) {
+  .shipping-summary {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .shipping-result-details {
+    grid-template-columns: 1fr;
+  }
+
+  .leg-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .multi-leg-section {
+    padding: 0.75rem;
+  }
+
+  .leg-item {
+    padding: 0.75rem;
+  }
+}
+
+/* Animation pour l'ajout/suppression de legs */
+.leg-item {
+  animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Amélioration des checkboxes */
+input[type="checkbox"] {
+  accent-color: var(--primary);
+  transform: scale(1.1);
+}
+
+/* Styles pour les labels avec checkbox */
+label:has(input[type="checkbox"]) {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  font-weight: 500;
+  color: var(--text);
+}
+
+/* Hover effects pour les boutons d'action */
+.devis-btn-action:hover {
+  transform: scale(1.05);
+}
+
+.devis-btn:hover {
+  transform: translateY(-1px);
+}
+
+
+
+
+
+
+

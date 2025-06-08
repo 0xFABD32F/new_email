@@ -1,0 +1,285 @@
+/* CSS spécifique pour le composant StatCard - à importer si nécessaire */
+
+/* Cartes de statistiques ultra-professionnelles avec animations améliorées */
+.stat-card-minimal {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 32px 24px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04), 0 1px 2px rgba(0, 0, 0, 0.02);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid rgba(226, 232, 240, 0.8);
+  position: relative;
+  overflow: hidden;
+  min-height: 160px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+/* Effet de survol amélioré avec animations multiples */
+.stat-card-minimal:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12), 0 6px 12px rgba(0, 0, 0, 0.08);
+  border-color: rgba(203, 213, 225, 0.9);
+}
+
+/* Animation de l'icône au survol */
+.stat-card-minimal:hover .stat-card-icon {
+  transform: scale(1.15) rotate(5deg);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Animation du titre au survol */
+.stat-card-minimal:hover .stat-card-title-minimal {
+  color: #0f172a;
+  transform: translateX(5px);
+}
+
+/* Animation de la valeur au survol */
+.stat-card-minimal:hover .stat-card-value-minimal {
+  transform: scale(1.05);
+  color: #2563eb;
+}
+
+/* Animation de la description au survol */
+.stat-card-minimal:hover .stat-card-description-minimal {
+  color: #374151;
+  transform: translateX(3px);
+}
+
+/* Conteneur de l'icône avec transitions améliorées */
+.stat-card-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  font-size: 20px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  z-index: 2;
+}
+
+/* Icônes spécifiques par type */
+.stat-card-icon.leads {
+  background: rgba(16, 185, 129, 0.08);
+  color: #10b981;
+}
+
+.stat-card-icon.opportunities {
+  background: rgba(245, 158, 11, 0.08);
+  color: #f59e0b;
+}
+
+.stat-card-icon.devis {
+  background: rgba(139, 92, 246, 0.08);
+  color: #8b5cf6;
+}
+
+.stat-card-icon.projects {
+  background: rgba(236, 72, 153, 0.08);
+  color: #ec4899;
+}
+
+.stat-card-icon.orders {
+  background: rgba(34, 197, 94, 0.08);
+  color: #22c55e;
+}
+
+.stat-card-icon.clients {
+  background: rgba(59, 130, 246, 0.08);
+  color: #3b82f6;
+}
+
+.stat-card-content-minimal {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  position: relative;
+  z-index: 2;
+}
+
+.stat-card-title-minimal {
+  font-size: 16px;
+  font-weight: 600;
+  color: #1e293b;
+  margin-bottom: 8px;
+  letter-spacing: -0.025em;
+  line-height: 1.4;
+  transition: all 0.3s ease;
+}
+
+.stat-card-value-minimal {
+  font-size: 36px;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 12px;
+  line-height: 1;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Inter", sans-serif;
+  letter-spacing: -0.02em;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+}
+
+/* Effet de soulignement animé pour les valeurs */
+.stat-card-value-minimal::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #2563eb, #3b82f6);
+  border-radius: 2px;
+  transition: width 0.4s ease;
+}
+
+.stat-card-minimal:hover .stat-card-value-minimal::after {
+  width: 50px;
+}
+
+.stat-card-description-minimal {
+  font-size: 14px;
+  color: #64748b;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  line-height: 1.3;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+/* Indicateur de flèche animé */
+.stat-card-description-minimal::before {
+  content: "→";
+  position: absolute;
+  left: -20px;
+  color: #2563eb;
+  font-weight: bold;
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+.stat-card-minimal:hover .stat-card-description-minimal::before {
+  opacity: 1;
+  left: -15px;
+}
+
+/* Animation d'apparition séquentielle */
+.stat-card-minimal {
+  animation: slideInUp 0.6s ease-out;
+  opacity: 0;
+  animation-fill-mode: forwards;
+}
+
+.stat-card-minimal:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.stat-card-minimal:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.stat-card-minimal:nth-child(3) {
+  animation-delay: 0.3s;
+}
+.stat-card-minimal:nth-child(4) {
+  animation-delay: 0.4s;
+}
+.stat-card-minimal:nth-child(5) {
+  animation-delay: 0.5s;
+}
+.stat-card-minimal:nth-child(6) {
+  animation-delay: 0.6s;
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Animation pour les valeurs */
+.stat-card-value-minimal {
+  animation: countUp 0.8s ease-out 0.2s both;
+}
+
+@keyframes countUp {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Effet de brillance amélioré au survol */
+.stat-card-minimal::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.6), transparent);
+  transition: left 0.6s ease;
+  z-index: 1;
+}
+
+.stat-card-minimal:hover::after {
+  left: 100%;
+}
+
+/* Effet de bordure colorée au survol */
+.stat-card-minimal::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #2563eb, #3b82f6, #06b6d4);
+  border-radius: 16px 16px 0 0;
+  transform: scaleX(0);
+  transition: transform 0.4s ease;
+  z-index: 3;
+}
+
+.stat-card-minimal:hover::before {
+  transform: scaleX(1);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .stat-card-minimal {
+    padding: 24px 20px;
+    min-height: 140px;
+  }
+
+  .stat-card-icon {
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+    margin-bottom: 16px;
+  }
+
+  .stat-card-value-minimal {
+    font-size: 28px;
+  }
+
+  .stat-card-title-minimal {
+    font-size: 15px;
+  }
+
+  /* Réduire les animations sur mobile pour les performances */
+  .stat-card-minimal:hover {
+    transform: translateY(-4px) scale(1.01);
+  }
+}

@@ -1,0 +1,509 @@
+.email-interface {
+    display: flex;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+  }
+  
+  /* Sidebar styles */
+  .email-sidebar {
+    width: 250px;
+    min-width: 250px;
+    background: #f5f5f5;
+    border-right: 1px solid #e0e0e0;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+  
+  .sidebar-header {
+    padding: 16px;
+    border-bottom: 1px solid #e0e0e0;
+  }
+  
+  .compose-button-container {
+    padding: 16px;
+  }
+  
+  .compose-button {
+    width: 100%;
+    padding: 12px;
+    background: #0078d4;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+  }
+  
+  .compose-button:hover {
+    background: #106ebe;
+  }
+  
+  /* Email list panel */
+  .email-list-panel {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-width: 300px;
+    border-right: 1px solid #e0e0e0;
+  }
+  
+  .email-list-panel.with-detail {
+    width: 40%;
+  }
+  
+  /* Email detail panel */
+  .email-detail-panel {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-width: 400px;
+    background: white;
+  }
+  
+  /* Responsive design */
+  @media (max-width: 1200px) {
+    .email-list-panel.with-detail {
+      width: 50%;
+    }
+  }
+  
+  @media (max-width: 992px) {
+    .email-sidebar {
+      width: 200px;
+      min-width: 200px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .email-interface {
+      flex-direction: column;
+    }
+  
+    .email-sidebar {
+      width: 100%;
+      min-width: 100%;
+      height: auto;
+    }
+  
+    .email-list-panel {
+      width: 100%;
+      min-width: 100%;
+    }
+  
+    .email-list-panel.with-detail {
+      display: none;
+    }
+  
+    .email-detail-panel {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 1000;
+      background: white;
+    }
+  }
+  
+  /* Compose email dialog */
+  .compose-email-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  .compose-email-dialog {
+    background: white;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 800px;
+    max-height: 90vh;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .compose-email-header {
+    padding: 16px;
+    border-bottom: 1px solid #e0e0e0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .compose-email-body {
+    padding: 16px;
+    overflow-y: auto;
+  }
+  
+  .compose-form-group {
+    margin-bottom: 16px;
+  }
+  
+  .compose-form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+  }
+  
+  .compose-form-group input,
+  .compose-form-group textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+  }
+  
+  .formatting-toolbar {
+    display: flex;
+    gap: 8px;
+    padding: 8px;
+    border: 1px solid #e0e0e0;
+    border-bottom: none;
+    border-radius: 4px 4px 0 0;
+  }
+  
+  .format-button {
+    padding: 4px 8px;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .format-button:hover {
+    background: #f5f5f5;
+  }
+  
+  .compose-form-actions {
+    display: flex;
+    gap: 8px;
+    margin-top: 16px;
+  }
+  
+  .btn {
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  .btn-primary {
+    background: #0078d4;
+    color: white;
+    border: none;
+  }
+  
+  .btn-secondary {
+    background: #f5f5f5;
+    border: 1px solid #e0e0e0;
+  }
+  
+  /* Email list items */
+  .email-list-item {
+    padding: 16px;
+    cursor: pointer;
+    border-bottom: 1px solid #e0e0e0;
+  }
+  
+  .email-list-item:hover {
+    background: #f5f5f5;
+  }
+  
+  .email-list-item.selected {
+    background: #e8f0fe;
+  }
+  
+  .email-list-item.unread {
+    font-weight: 500;
+  }
+  
+  .email-list-item-content {
+    display: flex;
+    gap: 16px;
+  }
+  
+  .email-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #0078d4;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 500;
+  }
+  
+  .email-details {
+    flex: 1;
+  }
+  
+  .email-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+  }
+  
+  .email-sender {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  .company-badge {
+    background: #f5f5f5;
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-size: 12px;
+  }
+  
+  .email-label {
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-size: 12px;
+  }
+  
+  .email-subject {
+    font-weight: 500;
+    margin-bottom: 4px;
+  }
+  
+  .email-preview {
+    color: #666;
+    font-size: 14px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+  /* Detail panel styles */
+  .detail-toolbar {
+    padding: 16px;
+    border-bottom: 1px solid #e0e0e0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .email-detail-content {
+    padding: 16px;
+    overflow-y: auto;
+  }
+  
+  .email-detail-header {
+    margin-bottom: 24px;
+  }
+  
+  .sender-info {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 16px;
+  }
+  
+  .sender-avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: #0078d4;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 500;
+    font-size: 20px;
+  }
+  
+  .sender-details {
+    flex: 1;
+  }
+  
+  .sender-name {
+    font-weight: 500;
+    margin-bottom: 4px;
+  }
+  
+  .sender-email {
+    color: #666;
+    font-size: 14px;
+  }
+  
+  .dot-separator {
+    margin: 0 8px;
+    color: #999;
+  }
+  
+  /* Loading and error states */
+  .loading,
+  .error {
+    padding: 16px;
+    text-align: center;
+    color: #666;
+  }
+  
+  .error {
+    color: #d32f2f;
+  }
+  
+  /* Error message */
+  .error-message {
+    color: #d32f2f;
+    background-color: #ffebee;
+    padding: 8px 12px;
+    border-radius: 4px;
+    margin: 8px 0;
+    font-size: 14px;
+  }
+  
+  /* Loading spinner */
+  .fa-spinner {
+    animation: spin 1s linear infinite;
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  
+  /* Disabled button state */
+  .btn:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+  }
+  
+  /* Text button */
+  .text-button {
+    background: none;
+    border: none;
+    color: #0078d4;
+    cursor: pointer;
+    padding: 4px 8px;
+    font-size: 14px;
+  }
+  
+  .text-button:hover {
+    text-decoration: underline;
+  }
+  
+  /* Attachments container */
+  .attachments-container {
+    margin: 16px 0;
+    padding: 16px;
+    background: #f5f5f5;
+    border-radius: 4px;
+  }
+  
+  .attachments-container h4 {
+    margin: 0 0 12px 0;
+    font-size: 14px;
+    color: #666;
+  }
+  
+  .attachments-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .attachment-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 8px 12px;
+    background: white;
+    border-radius: 4px;
+    border: 1px solid #e0e0e0;
+  }
+  
+  .attachment-item i {
+    font-size: 20px;
+    color: #666;
+  }
+  
+  .attachment-name {
+    flex: 1;
+    font-size: 14px;
+    color: #333;
+    word-break: break-all;
+  }
+  
+  .attachment-size {
+    color: #666;
+    font-size: 12px;
+  }
+  
+  .download-attachment {
+    background: none;
+    border: none;
+    color: #0078d4;
+    cursor: pointer;
+    padding: 4px 8px;
+    border-radius: 4px;
+    transition: background-color 0.2s;
+  }
+  
+  .download-attachment:hover {
+    background-color: #e8f0fe;
+  }
+  
+  .download-attachment:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+  
+  /* File type icons colors */
+  .fa-file-pdf { color: #f44336; }
+  .fa-file-word { color: #2196f3; }
+  .fa-file-excel { color: #4caf50; }
+  .fa-file-powerpoint { color: #ff9800; }
+  .fa-file-archive { color: #795548; }
+  .fa-image { color: #9c27b0; }
+  .fa-video { color: #e91e63; }
+  .fa-music { color: #009688; }
+  
+  /* Close button */
+  .close-button {
+    background: none;
+    border: none;
+    color: #666;
+    cursor: pointer;
+    padding: 8px;
+    font-size: 16px;
+  }
+  
+  .close-button:hover {
+    color: #333;
+  }
+  
+  /* Divider vertical */
+  .divider-vertical {
+    width: 1px;
+    background: #e0e0e0;
+    margin: 0 8px;
+  }
+  
+  /* Placeholder styles */
+  input::placeholder,
+  textarea::placeholder {
+    color: #999;
+  }
+  
+  /* Focus states */
+  input:focus,
+  textarea:focus {
+    outline: none;
+    border-color: #0078d4;
+    box-shadow: 0 0 0 2px rgba(0, 120, 212, 0.1);
+  } 

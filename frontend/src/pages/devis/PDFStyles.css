@@ -1,0 +1,249 @@
+/* ===== STYLES PDF OPTIMISÉS POUR ODDNET ===== */
+
+:root {
+  --oddnet-primary: #193b6d;
+  --oddnet-secondary: #4682b4;
+  --oddnet-accent: #2c5aa0;
+  --pdf-white: #ffffff;
+  --pdf-black: #000000;
+  --pdf-gray-light: #f8f8f8;
+  --pdf-gray-border: #e0e0e0;
+  --pdf-text-muted: #666666;
+}
+
+/* ===== CONTENEUR PRINCIPAL ===== */
+.pdf-generator-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0;
+}
+
+/* ===== BOUTON GÉNÉRATION PDF AMÉLIORÉ ===== */
+.pdf-generator-btn {
+  background: linear-gradient(135deg, var(--oddnet-primary) 0%, var(--oddnet-secondary) 100%);
+  color: var(--pdf-white);
+  border: none;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 4px 12px rgba(25, 59, 109, 0.3);
+  position: relative;
+  overflow: hidden;
+  min-width: 150px;
+  justify-content: center;
+}
+
+.pdf-generator-btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+.pdf-generator-btn:hover::before {
+  left: 100%;
+}
+
+.pdf-generator-btn:hover {
+  background: linear-gradient(135deg, var(--oddnet-secondary) 0%, var(--oddnet-accent) 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(25, 59, 109, 0.4);
+}
+
+.pdf-generator-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 8px rgba(25, 59, 109, 0.3);
+}
+
+.pdf-generator-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: 0 2px 4px rgba(25, 59, 109, 0.2);
+}
+
+.pdf-generator-btn i {
+  font-size: 16px;
+  transition: transform 0.3s ease;
+}
+
+.pdf-generator-btn:hover i {
+  transform: scale(1.1);
+}
+
+/* ===== STYLES POUR L'APERÇU PDF ===== */
+.pdf-preview-container {
+  max-width: 210mm;
+  margin: 20px auto;
+  background: var(--pdf-white);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--pdf-gray-border);
+}
+
+.pdf-preview-header {
+  background: linear-gradient(135deg, var(--oddnet-primary), var(--oddnet-secondary));
+  color: var(--pdf-white);
+  padding: 20px;
+  text-align: center;
+  position: relative;
+}
+
+.pdf-preview-header::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--oddnet-accent), var(--oddnet-secondary), var(--oddnet-accent));
+}
+
+.pdf-preview-header h2 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.pdf-preview-actions {
+  background: var(--pdf-gray-light);
+  padding: 20px;
+  text-align: center;
+  border-top: 1px solid var(--pdf-gray-border);
+}
+
+/* ===== MESSAGES DE STATUT AMÉLIORÉS ===== */
+.pdf-status-message {
+  padding: 16px 20px;
+  border-radius: 8px;
+  margin: 16px 0;
+  font-size: 14px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border-left: 4px solid;
+  animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.pdf-status-success {
+  background: linear-gradient(135deg, #d4edda, #c3e6cb);
+  color: #155724;
+  border-left-color: #28a745;
+  box-shadow: 0 2px 8px rgba(40, 167, 69, 0.2);
+}
+
+.pdf-status-error {
+  background: linear-gradient(135deg, #f8d7da, #f5c6cb);
+  color: #721c24;
+  border-left-color: #dc3545;
+  box-shadow: 0 2px 8px rgba(220, 53, 69, 0.2);
+}
+
+.pdf-status-info {
+  background: linear-gradient(135deg, #d1ecf1, #bee5eb);
+  color: #0c5460;
+  border-left-color: #17a2b8;
+  box-shadow: 0 2px 8px rgba(23, 162, 184, 0.2);
+}
+
+/* ===== ANIMATION DE GÉNÉRATION AMÉLIORÉE ===== */
+.pdf-generating {
+  position: relative;
+  opacity: 0.8;
+  pointer-events: none;
+}
+
+.pdf-generating::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 24px;
+  height: 24px;
+  margin: -12px 0 0 -12px;
+  border: 3px solid rgba(25, 59, 109, 0.3);
+  border-radius: 50%;
+  border-top-color: var(--oddnet-primary);
+  animation: pdfSpin 1s linear infinite;
+}
+
+@keyframes pdfSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+@media (max-width: 768px) {
+  .pdf-preview-container {
+    margin: 10px;
+    border-radius: 8px;
+  }
+
+  .pdf-generator-btn {
+    width: 100%;
+    justify-content: center;
+    padding: 14px 20px;
+  }
+
+  .pdf-preview-header {
+    padding: 16px;
+  }
+
+  .pdf-preview-actions {
+    padding: 16px;
+  }
+}
+
+/* ===== ACCESSIBILITÉ ===== */
+.pdf-generator-btn:focus-visible {
+  outline: 2px solid var(--oddnet-accent);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pdf-generator-btn,
+  .pdf-status-message {
+    animation: none;
+    transition: none;
+  }
+}
+
+/* ===== PRINT STYLES ===== */
+@media print {
+  .pdf-generator-btn,
+  .pdf-preview-actions {
+    display: none;
+  }
+
+  .pdf-preview-container {
+    box-shadow: none;
+    border: none;
+    margin: 0;
+  }
+}

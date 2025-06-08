@@ -1,0 +1,134 @@
+/* Solution simplifiée pour réduire les polices SANS affecter les icônes */
+
+:root {
+  /* Tailles de police réduites pour le texte seulement */
+  --font-xs: 0.7rem; /* 11.2px */
+  --font-sm: 0.8rem; /* 12.8px */
+  --font-base: 0.85rem; /* 13.6px */
+  --font-md: 0.9rem; /* 14.4px */
+  --font-lg: 1rem; /* 16px */
+  --font-xl: 1.1rem; /* 17.6px */
+
+  /* Hauteurs de ligne compactes */
+  --line-height-tight: 1.2;
+  --line-height-normal: 1.35;
+  --line-height-relaxed: 1.5;
+
+  /* Espacements réduits */
+  --spacing-xs: 2px;
+  --spacing-sm: 4px;
+  --spacing-md: 8px;
+  --spacing-lg: 12px;
+  --spacing-xl: 16px;
+}
+
+/* Réduction globale de la taille de base */
+html {
+  font-size: 14px; /* Réduit de 16px à 14px */
+}
+
+/* Application sur le texte seulement, PAS sur les icônes */
+body {
+  font-size: var(--font-base);
+  line-height: var(--line-height-normal);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", sans-serif;
+}
+
+/* Réduction des éléments de texte uniquement */
+h1 {
+  font-size: var(--font-xl);
+  font-weight: 700;
+}
+h2 {
+  font-size: var(--font-lg);
+  font-weight: 600;
+}
+h3 {
+  font-size: var(--font-md);
+  font-weight: 600;
+}
+h4,
+h5,
+h6 {
+  font-size: var(--font-base);
+  font-weight: 600;
+}
+
+p,
+span,
+div {
+  font-size: inherit;
+}
+
+/* Tableaux compacts */
+table {
+  font-size: var(--font-sm);
+}
+table th {
+  font-size: var(--font-xs);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.025em;
+  padding: 6px 8px;
+}
+table td {
+  font-size: var(--font-sm);
+  line-height: var(--line-height-tight);
+  padding: 8px;
+}
+
+/* Formulaires */
+input,
+textarea,
+select {
+  font-size: var(--font-sm);
+  padding: 6px 10px;
+}
+label {
+  font-size: var(--font-sm);
+  font-weight: 500;
+}
+
+/* Boutons - texte seulement */
+button {
+  font-size: var(--font-sm);
+  font-weight: 500;
+  padding: 6px 12px;
+}
+
+/* Navigation */
+nav {
+  font-size: var(--font-sm);
+}
+
+/* Classes utilitaires */
+.text-xs {
+  font-size: var(--font-xs);
+}
+.text-sm {
+  font-size: var(--font-sm);
+}
+.text-base {
+  font-size: var(--font-base);
+}
+.text-md {
+  font-size: var(--font-md);
+}
+.text-lg {
+  font-size: var(--font-lg);
+}
+.text-xl {
+  font-size: var(--font-xl);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  html {
+    font-size: 13px;
+  }
+  :root {
+    --font-base: 0.8rem;
+    --font-sm: 0.75rem;
+    --font-xs: 0.65rem;
+  }
+}

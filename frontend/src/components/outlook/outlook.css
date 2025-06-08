@@ -1,0 +1,117 @@
+/* Styles pour les composants Outlook */
+
+/* EmailList */
+.email-container {
+  min-height: 400px;
+}
+
+.email-list .list-group-item {
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.email-list .list-group-item:hover {
+  background-color: #f8f9fa;
+}
+
+.email-detail {
+  margin-bottom: 1rem;
+}
+
+.email-header {
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.email-body {
+  padding: 1rem 0;
+}
+
+/* ComposeEmail */
+.compose-email {
+  margin-bottom: 1rem;
+}
+
+/* Calendar */
+.calendar-container {
+  min-height: 500px;
+}
+
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 10px;
+}
+
+.calendar-day {
+  border: 1px solid #e9ecef;
+  border-radius: 4px;
+  min-height: 150px;
+  padding: 8px;
+}
+
+.calendar-day.today {
+  background-color: #f8f9fa;
+  border-color: #2563eb;
+}
+
+.day-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  padding-bottom: 4px;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.day-name {
+  font-weight: 500;
+  color: #6c757d;
+}
+
+.day-number {
+  font-weight: 600;
+}
+
+.day-events {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.event-item {
+  background-color: #e6f2ff;
+  border-left: 3px solid #2563eb;
+  padding: 5px 8px;
+  border-radius: 3px;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.event-item:hover {
+  background-color: #d1e7ff;
+}
+
+.event-time {
+  font-size: 0.75rem;
+  color: #6c757d;
+}
+
+.event-title {
+  font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.event-location {
+  font-size: 0.75rem;
+  color: #6c757d;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.event-detail {
+  margin-bottom: 1rem;
+}
