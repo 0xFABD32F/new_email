@@ -1,0 +1,48 @@
+# === Python Bytecode ===
+__pycache__/
+*.py[cod]
+*$py.class
+
+# === Virtual Environment ===
+venv/
+env/
+
+# === Editor Configs ===
+.vscode/
+.idea/
+
+# === macOS System File ===
+.DS_Store
+
+# === Logs ===
+*.log
+
+# === Environment Variables ===
+.env
+.env.*
+
+# === Databases ===
+*.sqlite3
+*.db
+
+# === Coverage ===
+htmlcov/
+coverage.xml
+*.cover
+
+# === Test cache ===
+.pytest_cache/
+nosetests.xml
+.testmondata
+.tox/
+
+# === FastAPI Static/Uploads (si applicable) ===
+static/
+media/
+uploads/
+
+# === Migrations ===
+migrations/
+
+# === Uvicorn log file (optionnel) ===
+uvicorn.log
